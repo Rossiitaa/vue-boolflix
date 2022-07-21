@@ -12,16 +12,17 @@ import axios from 'axios'
 
 export default {
   name: 'App',
-  components: {
-    Header,
-    Main,
-  },
+  
   data() {
     return {
-      apiUrl: 'https://api.themoviedb.org/3/search/movie?api_key=86f90d02335fe15299eb1c2d6f51cae6&language=it-IT&query=',
+      apiUrl: "https://api.themoviedb.org/3/search/movie?api_key=86f90d02335fe15299eb1c2d6f51cae6&language=it-IT&query=",
       filmsList: [],
     }
   },
+  components: {
+      Header,
+      Main,
+    },
   methods: {
     search: function(search) {
       axios.get(`${this.apiUrl}${search}`)
@@ -29,9 +30,6 @@ export default {
           this.filmsList = response.data.results
         })
       },
-    },
-    created() {
-      this.search();
     },
   }
 </script>
