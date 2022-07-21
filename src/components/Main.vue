@@ -8,16 +8,28 @@
                 </li>
             <li>Vote: {{ film.vote_average }}</li>
         </ul>
+
+        <ul v-for="series in TvSeries" :key="series.id">
+            <li>Title: {{ series.name }}</li>
+            <li>Original Title: {{ series.original_name }}</li>
+            <li>
+                Language: <img class="img-size" :src="flagUrl(series.original_language)" alt="">
+                </li>
+            <li>Vote: {{ series.vote_count }}</li>
+        </ul>
     </main>
 </template>
 
 <script>
 export default {
-name: 'Main',
+name: 'Main',    
+
     props: {
         films: {
             type: Array,
-            required: true,
+        },
+        TvSeries: {
+            type: Array,
         },
     },
     methods: {
