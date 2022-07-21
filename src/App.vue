@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header />
+    <Header @Search="search" />
     <Main />
   </div>
 </template>
@@ -14,7 +14,18 @@ export default {
   components: {
     Header,
     Main,
-  }
+  },
+  data() {
+    return {
+      research: '',
+    }
+  },
+  methods: {
+    search(name) {
+      this.research = name;
+    },
+
+  },
 }
 </script>
 
