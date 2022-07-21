@@ -1,8 +1,8 @@
 <template>
     <header>
         <div>
-            <input type="text" placeholder="Inserisci Nome Film/Serie Tv" v-model.trim="filmSearch" @keyup.enter="$emit('Search' , filmSearch)">
-            <button @click="$emit('Search' , filmSearch)">Search</button>
+            <input type="text" placeholder="Inserisci Nome Film/Serie Tv" v-model.trim="filmSearch" @keyup.enter="$emit('search' , filmSearch)">
+            <button @click="$emit('search' , filmSearch)">Search</button>
         </div>
     </header>
 </template>
