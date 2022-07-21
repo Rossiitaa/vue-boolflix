@@ -1,6 +1,7 @@
 <template>
     <main>
         <ul v-for="film in films" :key="film.id">
+            <img :src="cover(film.poster_path)" alt="">
             <li>Title: {{ film.title }}</li>
             <li>Original Title: {{ film.original_title }}</li>
             <li>
@@ -10,6 +11,7 @@
         </ul>
 
         <ul v-for="series in TvSeries" :key="series.id">
+            <img :src="cover(series.poster_path)" alt="">
             <li>Title: {{ series.name }}</li>
             <li>Original Title: {{ series.original_name }}</li>
             <li>
@@ -35,6 +37,9 @@ name: 'Main',
     methods: {
         flagUrl(language) {
             return `https://www.unknown.nu/flags/images/${language}-100`
+        },
+        cover(poster_path) {
+            return `https://image.tmdb.org/t/p/w185${poster_path}`
         },
     }
 }

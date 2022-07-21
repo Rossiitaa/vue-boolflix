@@ -43,8 +43,11 @@ export default {
   }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '~bootstrap/scss/bootstrap.scss';
 @import './styles/general.scss';
 
+  div {
+    background-color: #f5f5f5;
+  }
 </style>
