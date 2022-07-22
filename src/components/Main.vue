@@ -1,20 +1,28 @@
 <template>
-    <main class="slider">
-        <div class="handle handle-left"></div>
-            <ul v-for="film in films" :key="film.id">
+    <main class="slider d-flex">
+        <ul class="position-relative" v-for="film in films" :key="film.id">
+            <div>
                 <img :src="cover(film.poster_path)" alt="">
+            </div>
+
+            <div class="cont-text">
                 <li>Title: {{ film.title }}</li>
                 <li>Original Title: {{ film.original_title }}</li>
                 <li>
                     Language: <img class="img-lang-size" :src="flagUrl(film.original_language)" alt="">
-                    </li>
+                </li>
                 <li>
                     Vote: <i v-for="vote in voteAverage(film.vote_average)" :key="vote" class="fa-solid fa-star"></i>
                 </li>
-            </ul>
+            </div>
+        </ul>
 
-            <ul v-for="series in tvSeries" :key="series.id">
+        <ul v-for="series in tvSeries" :key="series.id">
+            <div>
                 <img :src="cover(series.poster_path)" alt="">
+            </div>
+
+            <div class="cont-text">
                 <li>Title: {{ series.name }}</li>
                 <li>Original Title: {{ series.original_name }}</li>
                 <li>
@@ -24,8 +32,9 @@
                     Vote: <i v-for="vote in voteAverage(series.vote_count)" :key="vote" class="fa-solid fa-star">
                     </i> 
                 </li>
-            </ul>
-        <div class="handle handle-right"></div>
+            </div>
+            
+        </ul>
     </main>
 </template>
 
@@ -83,12 +92,17 @@ name: 'Main',
     svg {
         color: #ffbe45;
     }
-    ul > img {
+    div > img {
         width: 25rem;
         height: 35rem;
         object-fit: cover;
         object-position: center top;
     }
 }
+    .cont-text {
+        position: absolute;
+        top: 30px;
+        left: 10px;
+    }
 
 </style>
