@@ -1,11 +1,11 @@
 <template>
     <main class="slider d-flex">
-        <ul class="position-relative" v-for="film in films" :key="film.id">
+        <ul @mouseover="hover = true" @mouseleave="hover = false" class="position-relative" v-for="film in films" :key="film.id">
             <div>
                 <img :src="cover(film.poster_path)" alt="">
             </div>
 
-            <div class="cont-text">
+            <div v-show="hover" class="cont-text">
                 <li>Title: {{ film.title }}</li>
                 <li>Original Title: {{ film.original_title }}</li>
                 <li>
@@ -17,12 +17,12 @@
             </div>
         </ul>
 
-        <ul v-for="series in tvSeries" :key="series.id">
+        <ul @mouseover="hover = true" @mouseleave="hover = false" v-for="series in tvSeries" :key="series.id">
             <div>
                 <img :src="cover(series.poster_path)" alt="">
             </div>
 
-            <div class="cont-text">
+            <div v-show="hover" class="cont-text">
                 <li>Title: {{ series.name }}</li>
                 <li>Original Title: {{ series.original_name }}</li>
                 <li>
@@ -41,6 +41,11 @@
 <script>
 export default {
 name: 'Main',    
+    data() {
+        return {
+            hover: false,
+        }
+    },
 
     props: {
         films: {
@@ -100,9 +105,13 @@ name: 'Main',
     }
 }
     .cont-text {
+        width: 96.2%;
+        height: 100%;
         position: absolute;
-        top: 30px;
-        left: 10px;
+        top: 8px;
+        left: 8px;
+        background-color: #000;
+        padding: 3rem 0;
     }
 
 </style>
