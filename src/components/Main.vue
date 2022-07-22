@@ -7,7 +7,9 @@
             <li>
                 Language: <img class="img-size" :src="flagUrl(film.original_language)" alt="">
                 </li>
-            <li>Vote: {{ film.vote_average }}</li>
+            <li>
+                Vote: <i v-for="vote in voteAverage(film.vote_average)" :key="vote" class="fa-solid fa-star"></i>
+            </li>
         </ul>
 
         <ul v-for="series in tvSeries" :key="series.id">
@@ -16,8 +18,10 @@
             <li>Original Title: {{ series.original_name }}</li>
             <li>
                 Language: <img class="img-size" :src="flagUrl(series.original_language)" alt="">
-                </li>
-            <li>Vote: {{ series.vote_count }}</li>
+            </li>
+            <li>
+                Vote: <i v-for="vote in voteAverage(series.vote_count)" :key="vote" class="fa-solid fa-star"></i> 
+            </li>
         </ul>
     </main>
 </template>
@@ -41,6 +45,9 @@ name: 'Main',
         cover(poster_path) {
             return `https://image.tmdb.org/t/p/w342${poster_path}`
         },
+        voteAverage(vote) {
+            return Math.ceil(vote / 2)
+        }
     }
 }
 </script>

@@ -3,7 +3,6 @@
         <div>
             <input type="text" placeholder="Inserisci Nome Film/Serie Tv" v-model.trim="filmSearch" @keyup.enter="$emit('search' , filmSearch)">
             <button @click="$emit('search' , filmSearch)">Search</button>
-
         </div>
     </header>
 </template>
