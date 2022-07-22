@@ -100,8 +100,6 @@ name: 'Main',
     div > img {
         width: 25rem;
         height: 35rem;
-        object-fit: cover;
-        object-position: center top;
     }
 }
     .cont-text {
