@@ -10,7 +10,7 @@
             <li>Vote: {{ film.vote_average }}</li>
         </ul>
 
-        <ul v-for="series in TvSeries" :key="series.id">
+        <ul v-for="series in tvSeries" :key="series.id">
             <img :src="cover(series.poster_path)" alt="">
             <li>Title: {{ series.name }}</li>
             <li>Original Title: {{ series.original_name }}</li>
@@ -30,7 +30,7 @@ name: 'Main',
         films: {
             type: Array,
         },
-        TvSeries: {
+        tvSeries: {
             type: Array,
         },
     },
@@ -39,7 +39,7 @@ name: 'Main',
             return `https://www.unknown.nu/flags/images/${language}-100`
         },
         cover(poster_path) {
-            return `https://image.tmdb.org/t/p/w185${poster_path}`
+            return `https://image.tmdb.org/t/p/w342${poster_path}`
         },
     }
 }

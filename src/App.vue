@@ -3,7 +3,7 @@
     <Header @search="search" />
     <Main 
     :films="filmsList" 
-    :TvSeries="TvSeriesList" />
+    :TvSeries="tvSeriesList" />
   </div>
 </template>
 
@@ -19,7 +19,7 @@ export default {
       apiFilmUrl: "https://api.themoviedb.org/3/search/movie?api_key=86f90d02335fe15299eb1c2d6f51cae6&language=it-IT&query=",
       apiTvSeriesUrl: "https://api.themoviedb.org/3/search/tv?api_key=86f90d02335fe15299eb1c2d6f51cae6&language=it-IT&query=",
       filmsList: [],
-      TvSeriesList: [],
+      tvSeriesList: [],
     }
   },
   components: {
@@ -36,7 +36,7 @@ export default {
 
       axios.get(this.apiTvSeriesUrl + search)
         .then(response => {
-          this.TvSeriesList = response.data.results
+          this.tvSeriesList = response.data.results
         })
       }
     },
@@ -46,7 +46,6 @@ export default {
 <style lang="scss" scoped>
 @import '~bootstrap/scss/bootstrap.scss';
 @import './styles/general.scss';
-
   div {
     background-color: #f5f5f5;
   }
