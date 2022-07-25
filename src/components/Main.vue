@@ -1,6 +1,6 @@
 <template>
     <main>
-    
+
         <section>
             <h2>Film:</h2>
             <ul class="position-relative" v-for="film in films" :key="film.id">
@@ -14,7 +14,7 @@
                         Language: <img class="img-lang-size" :src="flagUrl(film.original_language)" alt="">
                     </li>
                     <li>
-                        Vote: <i v-for="vote in voteAverage(film.vote_average)" :key="vote" class="fa-solid fa-star"></i>
+                        Vote: <i v-for="vote in voteAverage(film.vote_average)" :key="vote"             class="fa-solid fa-star"></i>
                     </li>
                     <li>Overview: {{ film.overview }}</li>
                 </div>
@@ -42,8 +42,7 @@
                 </div>
             </ul>
         </section>
-            
-        
+
     </main>
 </template>
 
@@ -81,25 +80,8 @@ name: 'Main',
 
 <style lang="scss" scoped>
 @import '~bootstrap/scss/bootstrap.scss';
-    hr {
-        width: 423vw;
-    }
 
-
-    h2 {
-        color: #fff;
-        width: 130px;
-        height: 100px;
-        padding-right: 4rem;
-        text-align: center;
-    }
-
-    img {
-        width: 100%;
-        padding: 0.5rem;
-    }
-
-    section {
+section {
         display: flex;
         align-items: center;
         overflow: auto;
@@ -108,7 +90,6 @@ name: 'Main',
         list-style: none;
         color: #fff;
         padding: 0;
-
             &:hover .cont-text {
             visibility: visible;
             }
@@ -136,6 +117,17 @@ name: 'Main',
         visibility: hidden;
     }
 }
-    
 
+h2 {
+    color: #fff;
+    width: 130px;
+    height: 100px;
+    padding-right: 4rem;
+    text-align: center;
+}
+
+img {
+    width: 100%;
+    padding: 0.5rem;
+}
 </style>

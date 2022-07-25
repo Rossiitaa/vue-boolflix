@@ -26,18 +26,15 @@ export default {
 <style lang="scss" scoped>
 @import '~bootstrap/scss/bootstrap.scss';
 
-    header {
+header {
         background-color: #000;
         padding: 1rem 2rem;
-
     h2 {
         color: #ed0001;
     }
-
     input {
         margin-right: 14px;
         padding-right: 5px;
     }
-
 }
 </style>
