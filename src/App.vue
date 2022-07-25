@@ -3,7 +3,7 @@
     <Header @search="search" />
     <Main 
     :films="filmsList" 
-    :TvSeries="tvSeriesList" />
+    :tvSeries="tvSeriesList" />
   </div>
 </template>
 
